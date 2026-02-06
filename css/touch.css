@@ -1,0 +1,449 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../image/bac6.jpg); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+}
+
+.header {
+    position: relative; /* 子要素の基準にする */
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+.photo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+
+
+/* ロゴやメニューが入っているコンテナ */
+.header-inner {
+    position: relative; 
+    z-index: 10;
+    height: 100px; /* ロゴなどの高さは維持 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10; 
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.header-title {
+    position: absolute;
+    top: 20rem; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.header-title h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.header-title p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.header-title p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* 非表示ボタン */
+.menu-trigger{
+    display: none;
+}
+
+.header-logo img {
+    width: 200px;
+    margin-top: 35px;
+}
+
+/* メニュー設定 */
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-menu ul li {
+    margin: 0 7px;
+    position: relative; 
+}
+
+/* リンク自体の色指定 */
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* ホバーで色を変える */
+.header-menu ul :hover > a {
+    color: #fdfa38;
+}
+
+/* 子メニューの箱：最初は隠す */
+.header-menu .sub-menu {
+    display: none;       
+    position: absolute;  
+    top: 100%;         
+    left: 0;
+    border: none;
+    padding: 10px 0;
+    min-width: 130px;
+    z-index: 100;
+    flex-direction: column; /* ★横並びにならないように縦に並べる */
+    border-radius: 10px;      /* 角を丸くする */
+    padding: 1px 0;         /* 中の上下余白を広くする */}
+
+    .header-menu li:hover > .sub-menu {
+    display: flex; /* flex-direction: columnで縦に並ぶように出す */
+}
+
+.sub-menu li {
+    margin: 0; 
+    width: 100%;
+}
+
+.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+
+/* main設定 */
+
+.intro-section {
+    /* 画面の横幅いっぱいに広げる */
+    width: 100%;
+    max-width: 100%;
+    background-color: rgba(20, 20, 35, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+    border-radius: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 80px 40px;
+    color: #fff;
+    position: relative; /* Before要素の基準用 */
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-title .en-title {
+    color: #4a90e2;
+    letter-spacing: 0.3em;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 紹介アイテムの基本設定 */
+.intro-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+}
+
+/* 偶数番目は左右反転 */
+.intro-item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* 画像エリア */
+.intro-img {
+    flex: 1;
+    position: relative;
+}
+
+.intro-img img {
+    width: 100%;
+    height: 400px; /* 高さを固定して揃える（お好みで調整） */
+    object-fit: cover; /* 画像を切り抜いて枠いっぱいに表示 */
+    border-radius: 5px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-caption {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    background: #4a90e2;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+/* テキストエリア */
+.intro-content {
+    flex: 1;
+}
+
+.intro-content .num {
+    font-size: 3.5rem; /* 少し大きく */
+    font-weight: 900;
+    color: #4a90e2; /* 透明度をなくしてしっかり色を出す */
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.intro-content h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.intro-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #4a90e2;
+}
+
+
+/* 開催概要の枠組み */
+.event-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(74, 144, 226, 0.3); /* 少し青い枠線 */
+    border-radius: 15px;
+    max-width: 900px;
+}
+
+/* 「参加費無料」の文字装飾 */
+.free-badge {
+    color: #fff;
+    font-size: 1.4rem ;
+    font-weight: bold;
+}
+
+.label {
+    display: block;
+    font-size: 0.75rem;
+    color: #4a90e2;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+}
+
+.floor-selector {
+    display: flex;           /* フレックスボックスにする */
+    justify-content: center;  /* 左右の中央に配置する */
+    margin: 40px auto;       /* 上下に余白を作り、左右は自動調整 */
+    width: 100%;             /* 親要素の幅いっぱいに広げる */
+}
+.floor-btn {
+    display: inline-block;
+    width: 100px;            /* 3つのボタンが並びやすいよう幅を少し小さく(120→100) */
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: #1a1a2e;
+    border: 2px solid #4a90e2;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* ホバーした時だけ光る設定 */
+.floor-btn:hover {
+    background: #4a90e2;
+    color: #fff;
+    box-shadow: 0 0 15px #4a90e2;
+    transform: translateY(-3px);
+}
+
+
+
+/* サイトメニュー設定 */
+.main-site-menu {
+    padding-top: 40px; 
+}
+.site-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px; 
+    /* 下に下げる（例：50px） */
+    margin-top: 80px; 
+
+    /* 右にずらす（例：100px） */
+    margin-left: 150px; 
+}
+
+.site-menu a:hover {
+    color: #fdfa38;
+}
+
+/* ロケットの設定 */
+.to-top-btn {
+    /* 配置設定 */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;    
+    /* ボタンのデザイン（背景や枠を消す） */
+    display: flex;
+    justify-content: center;
+    width: 80px;  /* ロケットの大きさを調整 */
+    height: auto;
+    
+    /* 表示・非表示の切り替え設定 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ロケット画像そのものの設定 */
+.rocket-img {
+    width: 40px;
+    height: auto;
+    /* 背景がない分、影（ドロップシャドウ）をつけると見やすくなります */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* スクロール時に表示 */
+.to-top-btn.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ホバーした時：ロケットを少し大きく、光らせる */
+.to-top-btn:hover .rocket-img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+}
+
+/* mainは終わり */
+
+/* footerの設定 */
+.footer_LINK {
+    display: flex;
+    column-gap: 80px;        
+    flex-wrap: wrap;  
+    padding:20px 120px 40px;
+}
+
+.footer {
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px; 
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.footer-text {
+    font-size: 17px;
+    margin-top: 10px;       /* ロゴの文字の高さに微調整 */
+    line-height: 1.8;       /* 行間を広げると読みやすい */
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ロケット発射のアニメーション */
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        /* 少しだけ下に沈み込んでから... */
+        transform: translateY(10px);
+    }
+    100% {
+        /* 一気に画面の上に突き抜ける！ */
+        transform: translateY(-100vh);
+    }
+}
+
+/* JSでこのクラスがついた瞬間に発射 */
+.to-top-btn.launching {
+    animation: rocket-launch 0.8s forwards ease-in;
+    pointer-events: none; /* 連打防止 */
+}

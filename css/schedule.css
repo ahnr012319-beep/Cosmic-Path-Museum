@@ -1,0 +1,455 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../image/bac6.jpg); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+}
+
+.header {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+.photo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+
+/* ロゴやメニューが入っているコンテナ */
+.header-inner {
+    position: relative; 
+    z-index: 10;
+    height: 100px; /* ロゴなどの高さは維持 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10; 
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.header-title {
+    position: absolute;
+    top: 20rem; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.header-title h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.header-title p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.header-title p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* 非表示ボタン */
+.menu-trigger{
+    display: none;
+}
+
+.header-logo img {
+    width: 200px;
+    margin-top: 35px;
+}
+
+/* メニュー設定 */
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-menu ul li {
+    margin: 0 7px;
+    position: relative; 
+}
+
+/* リンク自体の色指定 */
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* ホバーで色を変える */
+.header-menu ul :hover > a {
+    color: #fdfa38;
+}
+
+/* 子メニューの箱：最初は隠す */
+.header-menu .sub-menu {
+    display: none;       
+    position: absolute;  
+    top: 100%;         
+    left: 0;
+    border: none;
+    padding: 10px 0;
+    min-width: 130px;
+    z-index: 100;
+    flex-direction: column; /* ★横並びにならないように縦に並べる */
+    border-radius: 10px;      /* 角を丸くする */
+    padding: 1px 0;         /* 中の上下余白を広くする */}
+
+    .header-menu li:hover > .sub-menu {
+    display: flex; /* flex-direction: columnで縦に並ぶように出す */
+}
+
+.sub-menu li {
+    margin: 0; 
+    width: 100%;
+}
+
+.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+/* main設定 */
+
+/* カレンダー全体のレイアウト（横に並べる） */
+.year-calendar {
+    margin-top: 180px; /* ★ここを大きくすると下に下がります */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+}
+.month {
+    width: 100%;       
+    max-width: 800px;  
+    margin: 20px auto;
+}
+
+.month table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    background: rgb(83, 83, 83);
+}
+
+/* マス目を横長の長方形にする */
+.month th {
+    height: 3rem;       /* 曜日の行は少し浅く */
+    background: #444;
+    vertical-align: middle;
+}
+
+.month td {
+    width: 14.28%;      /* 7等分 */
+    height: 4.5rem;     /* 高さを幅より短くして横長にする */
+    text-align: left;   /* 文字を左上に寄せると長方形に馴染みます */
+    padding: 8px;
+    border: 1px solid #333;
+    vertical-align: top;
+}
+
+/* 日付の下の情報を横並びにする、またはスッキリさせる */
+.time a, .closed {
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 4px;
+    white-space: nowrap; /* はみ出し防止 */
+}
+/* 営業時間のリンク */
+.time a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 0;
+    transition: 0.2s; /* 変化をなめらかに */
+}
+
+/* マウスを重ねたとき */
+.time a:hover {
+    color: #75aaf8; 
+    text-decoration: underline;
+}
+
+/* 営業時間テキストの設定 */
+.time {
+    display: block;      /* 確実に数字の下に改行させる */
+    font-size: 0.8rem;  /* 文字を小さく */
+    color: #bbb;         /* 少し薄いグレー */
+    margin-top: 12px;    /* 数字との間の溝 */
+    font-weight: normal; /* 太字を解除 */
+}
+
+/* 曜日の行（.days）の中の、1番目（日）を赤にする */
+.days th:nth-child(1) {
+    color: #ff4d4d; /* 赤色 */
+}
+
+/* 曜日の行（.days）の中の、7番目（土）を青にする */
+.days th:nth-child(7) {
+    color: #4d79ff; /* 青色 */
+}
+
+/* 火曜日（3列目）の設定：自動で「休館日」と出す */
+.month td:nth-child(3):not(:empty) {
+    color: #d7eb2a; 
+}
+
+.month td:nth-child(3):not(:empty)::after {
+    content: "休館日";
+    display: block;
+    font-size: 0.8rem;
+    color: #ff4d4d; /* 休館は赤で目立たせる */
+    margin-top: 12px;
+}
+
+.closed {
+    content: "休館日";
+    display: block;
+    font-size: 0.8rem;
+    color: #ff4d4d; /* 休館は赤で目立たせる */
+    margin-top: 12px;
+}
+
+.nav-arrow {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 10px;
+    color: #666;
+    user-select: none; /* テキスト選択を防ぐ */
+}
+
+.nav-arrow:hover {
+    color: #000; /* ホバー時に少し濃くする */
+}
+
+.calendar-title {
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+
+/* 「closed」クラスが入っている枠の数字と文字を黄色にする */
+td:has(.closed) {
+    color: #d7eb2a; 
+}
+
+.closed {
+    display: block;
+    font-size: 0.8em;
+}
+
+/* サイトメニュー設定 */
+.main-site-menu {
+    padding-top: 40px; 
+}
+.site-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px; 
+    /* 下に下げる（例：50px） */
+    margin-top: 80px; 
+
+    /* 右にずらす（例：100px） */
+    margin-left: 150px; 
+}
+
+.site-menu a:hover {
+    color: #fdfa38;
+}
+
+/* ロケットの設定 */
+.to-top-btn {
+    /* 配置設定 */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;    
+    /* ボタンのデザイン（背景や枠を消す） */
+    display: flex;
+    justify-content: center;
+    width: 80px;  /* ロケットの大きさを調整 */
+    height: auto;
+    
+    /* 表示・非表示の切り替え設定 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ロケット画像そのものの設定 */
+.rocket-img {
+    width: 40px;
+    height: auto;
+    /* 背景がない分、影（ドロップシャドウ）をつけると見やすくなります */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* スクロール時に表示 */
+.to-top-btn.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ホバーした時：ロケットを少し大きく、光らせる */
+.to-top-btn:hover .rocket-img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+}
+
+/* mainは終わり */
+
+/* footerの設定 */
+.footer_LINK {
+    display: flex;
+    column-gap: 80px;        
+    flex-wrap: wrap;  
+    padding:20px 120px 40px;
+}
+
+.footer {
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px; 
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.footer-text {
+    font-size: 17px;
+    margin-top: 10px;       /* ロゴの文字の高さに微調整 */
+    line-height: 1.8;       /* 行間を広げると読みやすい */
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ロケット発射のアニメーション */
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        /* 少しだけ下に沈み込んでから... */
+        transform: translateY(10px);
+    }
+    100% {
+        /* 一気に画面の上に突き抜ける！ */
+        transform: translateY(-100vh);
+    }
+}
+
+/* JSでこのクラスがついた瞬間に発射 */
+.to-top-btn.launching {
+    animation: rocket-launch 0.8s forwards ease-in;
+    pointer-events: none; /* 連打防止 */
+}
+/* PC・タブレット（801px以上）の設定 */
+.month {
+    width: 800px; /* 横幅を広げて横長の長方形を強調 */
+    margin: 40px auto;
+}
+
+.month table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    background: rgb(83, 83, 83);
+}
+
+.month td {
+    width: 14.28%;
+    height: 5rem;      /* 高さを抑えることで横長の印象に */
+    border: 1px solid #333;
+    vertical-align: top;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* スマホ・小型タブレット（800px以下）の設定 */
+@media (max-width: 800px) {
+    .year-calendar {
+        margin-top: 100px; /* スマホでは下げすぎると不自然なので少し控えめに */
+    }
+
+    .month {
+        width: 95%;     /* 画面端に少し余白を持たせる */
+    }
+    .month td {
+        height: auto;   /* 中身に応じて高さを可変に */
+        min-height: 60px;
+        font-size: 11px; /* 小さな画面でも文字が重ならないように調整 */
+        padding: 5px;
+    }
+    .calendar-title {
+        font-size: 1.2rem;
+    }
+}
+

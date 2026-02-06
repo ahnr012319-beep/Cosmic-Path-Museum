@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショップ</title>
+    <script src="./js/toggl.js"></script>
+    <link rel="stylesheet" href="./css/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- headerの設定 -->
+    <header class="header">
+        <div class="photo-bg">
+            <img src="./image/shopi.jpg" alt="header-bg" class="header-photo">
+        </div>
+        
+        <div class="header-inner">
+            <a class="header-logo" href="./index.html">
+                <img src="./image/footertag.png" alt="logo">
+            </a>
+            <div class="header-title">
+                <h1>MUSEUM SHOP</h1>
+                <p>ストア</p>
+            </div>
+    
+            <button class="menu-trigger" id="menu-btn">
+                <img src="./image/Group1.png" alt="メニュー" class="icon-open">
+                <img src="./image/Group2.png" alt="閉じる" class="icon-close">
+            </button>
+    
+            <div class="header-site-menu">
+                <nav class="header-menu">
+                    <ul>
+                        <li>
+                            <a>ご利用案内</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">TOP</a></li>
+                                <li><a href="schedule.html">営業時間</a></li>
+                                <li><a href="ticket.html">チケット購入</a></li>
+                                <li><a href="shop.html">ストア</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a>フロア</a>
+                            <ul class="sub-menu">
+                                <li><a href="area.html">全体</a></li>
+                                <li><a href="floor1.html">1F</a></li>
+                                <li><a href="floor2.html">2F</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a>イベント</a>
+                            <ul class="sub-menu">
+                                <li><a href="Event.html">一覧</a></li>
+                                <li><a href="planet.html">PLANETARIUM</a></li>
+                                <li><a href="touch.html">ふれる・感じる</a></li>
+                                <li><a href="travel.html">宇宙の旅</a></li>
+                                <li><a href="phot.html">写真展</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="./Access.html">アクセス</a></li> 
+                        <li><a href="./Q&A.html">お問合せ</a></li>            
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- mainの設定 -->
+     <main>
+        <section class="shop-section">
+            <div class="shop-intro">
+                <h2>MUSEUM ITEMS</h2>
+                <p>宇宙の記憶を、あなたのお手元に。</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-item">
+            <div class="product-img">
+                <img src="./image/tako.png" alt="宇宙食 たこ焼き">
+                <span class="product-tag">人気</span>
+            </div>
+            <div class="product-info">
+                <h3>SPACE FOOD (TAKOYAKI)</h3>
+                <p class="price">¥648</p>
+                <p class="stock-info">*在庫に限りがあります</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-img">
+                <img src="./image/niku.png" alt="宇宙食 肉じゃが">
+            </div>
+            <div class="product-info">
+                <h3>SPACE FOOD (VANILLA ICE)</h3>
+                <p class="price">¥648</p>
+                <p class="desc">大好き！日本食をイメージした肉じゃがです。</p>
+                <p class="stock-info">*在庫に限りがあります</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-img">
+                <img src="./image/ebi.png" alt="宇宙食 エビグラタン">
+            </div>
+            <div class="product-info">
+                <h3>SPACE FOOD (GRATIN)</h3>
+                <p class="price">¥648</p>
+                <p class="desc">お湯を注ぐだけで本物の味わい。宇宙飛行士も食べた逸品。</p>
+                <p class="stock-info">*在庫に限りがあります</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-img">
+                <img src="./image/ude.png" alt="ブレスレット">
+                <span class="product-tag" style="background: #4a90e2;">限定</span>
+            </div>
+            <div class="product-info">
+                <h3>星の欠片ブレスレット</h3>
+                <p class="price">¥3,500</p>
+                <p class="desc">唯一無二の輝き。シンプルながら存在感を放つ、星空を纏うためのアクセサリーです</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-img">
+                <img src="./image/bac.png" alt="宇宙ロゴトート">
+            </div>
+            <div class="product-info">
+                <h3>MUSEUM トートバッグ</h3>
+                <p class="price">¥1,800</p>
+                <p class="desc">当館ロゴ入りの丈夫なバッグ。お土産に一番人気です。</p>
+            </div>
+        </div>
+
+        <div class="product-item">
+            <div class="product-img">
+                <img src="./image/pika.png" alt="星空万華鏡">
+            </div>
+            <div class="product-info">
+                <h3>銀河の万華鏡</h3>
+                <p class="price">¥2,400</p>
+                <p class="desc">のぞくだけで、自分だけの宇宙が広がる幻想的なアイテム。</p>
+            </div>
+        </div>
+    </div>
+    <div class="shop-notice">
+        <p>※掲載商品は一例です。店頭では他にも多数のアイテムを取り揃えております。</p>
+        <p class="stock-warning">*在庫に限りがあります。品切れの際はご容赦ください。</p>
+    </div>
+</section>
+</section>
+    <div class="main-site-menu">
+        <nav class="site-menu">
+            <ul>
+                <li><a href="./index.html"target=>ご利用案内</a></li>
+                <li><a href="./Area.html"target=>フロア</a></li>
+                <li><a href="./Event.html"target=>イベント</a></li>
+                <li><a href="./Access.html"target=>アクセス</a></li> 
+                <li><a href="./Q&A.html"target=>お問合せ</a></li>            
+            </ul>
+        </nav>
+    </div>
+
+    <a href="#" id="pagetop" class="to-top-btn">
+        <img src="./image/rocket (2).png" alt="TOPに戻る" class="rocket-img">
+    </a>
+</main>
+
+<!--footerの設定 -->
+<footer>
+    <div class="footer_LINK">
+        <ul class="footer">
+            <li>
+                <a href="#">
+                    <img src="./image/footertag.png" alt="tag">
+                </a>
+            </li>
+        </ul>
+        
+        <div>
+            <div class="footer-text">
+                <p>〒554-0044</p>
+                <p>大阪府大阪市此花区夢洲中1丁目</p>
+                <p>TEL 0120-1027-0123</p>
+            </div>
+            
+            <ul class="link">
+                <li class="footer_link">
+                    <a href="#">プライバシーポリシー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </a>
+                </li>
+                <li class="footer_link">
+                    <a href="#">特定商取引法の基づく表記&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+                </li>
+            </ul>
+
+        </div>
+        <p class="copyright"><small>&copy;Cosmic Path Museum</small></p>
+    </div>
+</footer>
+
+</body>
+</html>

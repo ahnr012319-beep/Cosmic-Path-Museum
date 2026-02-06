@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問合せ</title>
+    <script src="./js/toggl.js"></script>
+    <link rel="stylesheet" href="./css/Q&A.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- headerの設定 -->
+    <header class="header">
+        <div class="photo-bg">
+            <img src="./image/toi.jpg" alt="header-bg" class="header-photo">
+        </div>
+        
+        <div class="header-inner">
+            <a class="header-logo" href="./index.html">
+                <img src="./image/footertag.png" alt="logo">
+            </a>
+            <div class="header-title">
+                <h1>Q&A </h1>
+                <p>お問合せ</p>
+            </div>
+    
+            <button class="menu-trigger" id="menu-btn">
+                <img src="./image/Group1.png" alt="メニュー" class="icon-open">
+                <img src="./image/Group2.png" alt="閉じる" class="icon-close">
+            </button>
+    
+            <div class="header-site-menu">
+                <nav class="header-menu">
+                    <ul>
+                        <li>
+                            <a>ご利用案内</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">TOP</a></li>
+                                <li><a href="schedule.html">営業時間</a></li>
+                                <li><a href="ticket.html">チケット購入</a></li>
+                                <li><a href="shop.html">ストア</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a>フロア</a>
+                            <ul class="sub-menu">
+                                <li><a href="area.html">全体</a></li>
+                                <li><a href="floor1.html">1F</a></li>
+                                <li><a href="floor2.html">2F</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a>イベント</a>
+                            <ul class="sub-menu">
+                                <li><a href="Event.html">一覧</a></li>
+                                <li><a href="planet.html">PLANETARIUM</a></li>
+                                <li><a href="touch.html">ふれる・感じる</a></li>
+                                <li><a href="travel.html">宇宙の旅</a></li>
+                                <li><a href="phot.html">写真展</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="./Access.html">アクセス</a></li> 
+                        <li><a href="./Q&A.html">お問合せ</a></li>            
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- main設定 -->
+    <main>
+        <div>
+            <div class="contact">
+                <h2>お問合せ</h2>
+        </div>
+        
+        <form action="#">
+            <dl class="form-area">
+                
+                <dt> <span class="required"> お名前</span></dt>
+                <dd><input class="input-text" type="text" name="name" required></dd>
+                   
+                <dt><span class="required">メールアドレス</span></dt>
+                <dd><input class="input-text"type="email" name="email required"></dd>
+                  
+                <dt>お電話番号</dt>
+                <dd><input class="input-text"type="tel" name="tel"></dd>
+                    
+                 <dt>お問い合わせ種別</dt>
+                <dd>
+                    <select class="select-box" name="genre" >
+                        
+                        <option value="入館・入館チケットについて" selected>入館・入館チケットについて</option>
+                        <option value="施設サービスについて">施設サービスについて</option>
+                        <option value="ペット・ベビーカーについて">ペット・ベビーカーについて</option>
+                        <option value="落とし物について">落とし物について</option>
+                        <option value="その他">その他</option>
+
+                    </select>
+                </dd>
+                   
+                <dt>お客様について</dt>
+                <dd>
+                    <label class="radio-button"><input type="radio" name="user-type"value="一般のお客様" checked > 一般のお客様</label>
+                    <label class="radio-button"><input type="radio" name="user-type"value="お取引先様">お取引先様</label>
+                    <label class="radio-button"><input type="radio" name="user-type"value="その他">その他</label>
+                </dd>
+                    
+                <dt> <span class="required">お問い合わせ内容</span></dt>
+                <dd> <textarea class="message" name="message" required ></textarea></dd>
+
+                <dd class="btn-area">
+                    <p class="confirm-text">ご入力内容を確認の上、お間違いがなければ[送信]ボタンを押してください</p>
+                    <button class="submit-button" type="submit">送信</button>
+                </dd>
+            </dl>
+        </form>
+        
+        <div class="main-site-menu">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="./index.html"target=>ご利用案内</a></li>
+                    <li><a href="./Area.html"target=>フロア</a></li>
+                    <li><a href="./Event.html"target=>イベント</a></li>
+                    <li><a href="./Access.html"target=>アクセス</a></li> 
+                    <li><a href="./Q&A.html"target=>お問合せ</a></li>            
+                </ul>
+             </nav>
+        </div>
+            
+            <a href="#" id="pagetop" class="to-top-btn">
+            <img src="./image/rocket (2).png" alt="TOPに戻る" class="rocket-img">
+        </a>
+    </main>
+    
+    <!--footerの設定 -->
+    <footer>
+        <div class="footer_LINK">
+            <ul class="footer">
+                <li>
+                    <a href="index.html">
+                        <img src="./image/footertag.png" alt="tag">
+                    </a>
+                </li>
+            </ul>
+            
+            <div>
+                <div class="footer-text">
+                    <p>〒554-0044</p>
+                    <p>大阪府大阪市此花区夢洲中1丁目</p>
+                    <p>TEL 0120-1027-0123</p>
+                </div>
+                
+                <ul class="link">
+                    <li class="footer_link">
+                        <a href="#">プライバシーポリシー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </a>
+                    </li>
+                    <li class="footer_link">
+                        <a href="#">特定商取引法の基づく表記&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="copyright"><small>&copy;Cosmic Path Museum</small></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
+    

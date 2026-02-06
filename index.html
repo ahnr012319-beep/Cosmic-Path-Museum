@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="∼星の道が未来へと続く場所∼"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Path Museum </title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./slick/slick.min.js"></script>
+    <script src="./js/toggl.js"></script>
+    <link rel="stylesheet" href="./slick/slick-theme.css">
+    <link rel="stylesheet" href="./slick/slick.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- headerの設定 -->
+    <header class="header">
+
+        <div class="slider">
+            <video id="media1" class="header-media slider-item" src="./video/plantado.mp4" autoplay muted loop playsinline></video>
+            <div class="slider-item slider-item1"></div>
+            <div class="slider-item slider-item2"></div>
+        </div>
+
+        <div class="header-inner">
+
+            <a class="header-logo" href="./index.html">
+                <img src="./image/footertag.png" alt="logo">
+            </a>
+
+            <button class="menu-trigger" id="menu-btn">
+                <img src="./image/Group1.png" alt="メニュー" class="icon-open">
+                <img src="./image/Group2.png" alt="閉じる" class="icon-close">
+            </button>
+
+            <div class="header-site-menu">
+                <nav class="header-menu">
+                    <ul>
+                        <li>
+                            <a>ご利用案内</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">TOP</a></li>
+                                <li><a href="schedule.html">営業時間</a></li>
+                                <li><a href="ticket.html">チケット購入</a></li>
+                                <li><a href="shop.html">ストア</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a>フロア</a>
+                            <ul class="sub-menu">
+                                <li><a href="area.html">全体</a></li>
+                                <li><a href="floor1.html">1F</a></li>
+                                <li><a href="floor2.html">2F</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a>イベント</a>
+                            <ul class="sub-menu">
+                                <li><a href="Event.html">一覧</a></li>
+                                <li><a href="planet.html">PLANETARIUM</a></li>
+                                <li><a href="touch.html">ふれる・感じる</a></li>
+                                <li><a href="travel.html">宇宙の旅</a></li>
+                                <li><a href="phot.html">写真展</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="./Access.html">アクセス</a></li>
+                        <li><a href="./Q&A.html">お問合せ</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-text">
+                <h3><a href="./schedule.html">営業時間</a></h3>
+                <h3><a href="./ticket.html">チケット購入</a></h3>
+            </div>
+    </header>
+
+    <!-- main設定 -->
+    <main class="main">
+        <div class="pickup">
+            <h2>Pickup</h2>
+
+            <ul class="list">
+                <li>
+                    <a href="./planet.html" target="_blank" rel="noopener">
+                        <img src="./image/pra.jpg" alt="プラネタリウム">
+                    </a>
+                </li>
+                <li>
+                    <a href="./Event.html" target="_blank" rel="noopener">
+                        <img src="./image/ibe.jpg" alt="イベント">
+                    </a>
+                </li>
+                <li>
+                    <a href="./shop.html" target="_blank" rel="noopener">
+                        <img src="./image/sp.jpg" alt="ショップ">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="news">
+            <h2>News</h2>
+            <div class="news-text">
+                <dl>
+                    <dt>2025.12.24</dt>
+                    <dd>年末年始の営業について</dd>
+                </dl>
+                <dl>
+                    <dt>2025.12.01</dt>
+                    <dd>12月25日から新しい展示 </dd>
+                </dl>
+                <dl>
+                    <dt>2025.11.15</dt>
+                    <dd>プラネタリウムのチケットについて</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <div class="video-container">
+                <video id="myVideo" autoplay muted playsinline class="floor-video">
+                    <source src="./video/utyu.mp4" type="video/mp4">
+                </video>
+                <div id="videoMessage" class="video-overlay-text">
+                    まだ知らない空間への旅
+                </div>
+            </div>
+        </div>
+
+        <div class="-site-menu">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="./index.html" target=>ご利用案内</a></li>
+                    <li><a href="./Area.html" target=>フロア</a></li>
+                    <li><a href="./Event.html" target=>イベント</a></li>
+                    <li><a href="./Access.html" target=>アクセス</a></li>
+                    <li><a href="./Q&A.html" target=>お問合せ</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <a href="#" id="pagetop" class="to-top-btn">
+            <img src="./image/rocket (2).png" alt="TOPに戻る" class="rocket-img">
+        </a>
+    </main>
+
+    <!-- footerの設定 -->
+    <footer>
+        <div class="footer_LINK">
+            <ul class="footer">
+                <li>
+                    <a href="#">
+                        <img src="./image/footertag.png" alt="tag">
+                    </a>
+                </li>
+            </ul>
+
+            <div>
+                <div class="footer-text">
+                    <p>〒554-0044</p>
+                    <p>大阪府大阪市此花区夢洲中1丁目</p>
+                    <p>TEL 0120-1027-0123</p>
+                </div>
+
+                <ul class="linkr_foote">
+                    <li class="link">
+                        <a href="#">プライバシーポリシー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </a>
+                    </li>
+                    <li class="link">
+                        <a href="#">特定商取引法の基づく表記&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="copyright"><small>&copy;Cosmic Path Museum</small></p>
+        </div>
+    </footer>
+
+    <!-- <script>
+    const mediaElements = [
+        document.getElementById('media1'),
+        document.getElementById('media2'),
+        document.getElementById('media3')
+    ];
+    
+    let currentIndex = 0;
+
+    setInterval(() => {
+        // 今表示されているものを透明にする
+        mediaElements[currentIndex].style.opacity = '0';
+
+        // 次の番号へ進む（3番目まで行ったら0に戻る）
+        currentIndex = (currentIndex + 1) % mediaElements.length;
+
+        // 次のものを表示する
+        mediaElements[currentIndex].style.opacity = '1';
+    }, 7000); // 7秒ごとに切り替え
+</script> -->
+
+    <!-- <svg class="sozai" viewBox="0 0 4517 2448" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="waku" clipPathUnits="objectBoundingBox">
+            <path style="transform: scale(0.00022138587558,0.00040849673203);"
+                d="M0 2447.48V535.978C0 535.978 590 1164.98 1290.5 1164.98C1991 1164.98 2119 1045.48 2533 679.478C2947 313.478 2931.5 105.478 3576.5 9.9776C4221.5 -85.5224 4516.5 535.978 4516.5 535.978V2447.48H0Z"
+                fill="#FE5353" />
+        </clipPath>
+    </svg> -->
+    <!-- <svg class="sozai" viewBox="0 0 2629 1700" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="waku" clipPathUnits="objectBoundingBox">
+            <path style="transform: scale(0.00038037276531,0.00058823529412);" d="M0 1699.09V322.982C0 322.982 147.86 491.16 277.594 517.799C464.809 556.24 466.611 322.982 726.542 322.982C986.473 322.982 768.194 576.85 1098.78 576.85C1429.36 576.85 1506.07 322.982 1506.07 322.982C1506.07 322.982 1677.43 87.0403 2025.93 10.0634C2374.44 -66.9136 2628.31 322.982 2628.31 322.982V1699.09H0Z" fill="#A45252"/>
+        </clipPath>
+        </svg> -->
+
+        <!-- <svg class="sozai" viewBox="0 0 2357 1921" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <clipPath id="waku" clipPathUnits="objectBoundingBox">
+                <path style="transform: scale(0.00042426813746,0.00052056220718);" d="M0 1668.03V304.531C474.686 575.828 740.816 586.902 1215.5 304.531C1670.9 -89.8732 1921.4 -112.983 2357 304.531V1668.03C1930.45 1370.16 1681.65 1352.79 1215.5 1668.03C740.815 1999.96 474.688 2008.98 0 1668.03Z" fill="#885656"/>
+            </clipPath>
+        </svg> -->
+
+        <svg  class="sozai" viewBox="0 0 3143 2758" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <clipPath id="waku" clipPathUnits="objectBoundingBox">
+                <path style="transform: scale(0.00031816735603,0.00036258158086);" d="M0 2395.59V437.361C632.982 826.991 987.859 842.896 1620.84 437.361C2228.1 -129.074 2562.14 -162.264 3143 437.361V2395.59C2574.2 1967.8 2242.43 1942.84 1620.84 2395.59C987.858 2872.3 632.984 2885.26 0 2395.59Z" fill="#885656"/>
+            </clipPath>
+        </svg>
+            
+            
+        
+    <script>
+        const videoElement = document.getElementById('myVideo');
+        const playlist = [ './video/ace.mp4', './video/utyu.mp4', './video/hikousi.mp4'];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            // 次の動画へ
+            currentIndex = (currentIndex + 1) % playlist.length;
+
+            // ソースを切り替えて即座に再生
+            videoElement.src = playlist[currentIndex];
+            videoElement.load();
+            videoElement.play();
+        }, 6500); // 5秒ごとに実行
+    </script>
+
+</body>
+
+</html>

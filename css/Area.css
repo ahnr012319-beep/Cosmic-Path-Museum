@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../image/bac6.jpg); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+}
+
+.header {
+    position: relative; /* 子要素の基準にする */
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    
+    /* 元のマスク設定 */
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+.photo-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+.photo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 2s ease-in-out; 
+    
+}
+
+/* ロゴやメニューが入っているコンテナ */
+.header-inner {
+    position: relative; 
+    z-index: 10;
+    height: 100px; /* ロゴなどの高さは維持 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10; 
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.header-title {
+    position: absolute;
+    top: 20rem; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.header-title h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.header-title p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.header-title p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* 非表示ボタン */
+.menu-trigger{
+    display: none;
+}
+
+.header-logo img {
+    width: 200px;
+    margin-top: 35px;
+}
+
+/* メニュー設定 */
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-menu ul li {
+    margin: 0 7px;
+    position: relative; 
+}
+
+/* リンク自体の色指定 */
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* ホバーで色を変える */
+.header-menu ul :hover > a {
+    color: #fdfa38;
+}
+
+/* 子メニューの箱：最初は隠す */
+.header-menu .sub-menu {
+    display: none;       
+    position: absolute;  
+    top: 100%;         
+    left: 0;
+    border: none;
+    padding: 10px 0;
+    min-width: 130px;
+    z-index: 100;
+    flex-direction: column; /* ★横並びにならないように縦に並べる */
+    border-radius: 10px;      /* 角を丸くする */
+    padding: 1px 0;         /* 中の上下余白を広くする */}
+
+    .header-menu li:hover > .sub-menu {
+    display: flex; /* flex-direction: columnで縦に並ぶように出す */
+}
+
+.sub-menu li {
+    margin: 0; 
+    width: 100%;
+}
+
+.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+/* main設定 */
+
+.floor-text {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-size: 25px;
+    color: #fff;
+    margin: 70px 0 100px 100px;
+}
+
+/* --- フロアエリア全体の共通設定 --- */
+.f1 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin: 100px auto;      
+    max-width: 1400px;
+}
+
+.f1 h2 {
+    font-size: 80px;         
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    margin: 0 ;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    white-space: nowrap;
+    width: 40%;
+}
+.f1 a{
+    width: 40%;
+}
+/* 画像の設定 */
+.f1 img {
+    width: 100%;              /* ★画像を大きくする（45% → 60%） */
+    max-width: 800px;        /* ★最大サイズの上限を上げる（550px → 800px） */
+    height: auto;
+    margin: 0 ;    
+    transition: transform 0.3s ease;
+}
+
+/* 2Fエリア全体：f1と同じ設定にします */
+.f2 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin: 100px auto;       /* 上下100px、左右autoで中央寄せ */
+    max-width: 1400px;       /* f1と同じ最大幅 */
+    width: 100%;             /* 横幅いっぱいに広げた上で最大幅を制限 */
+}
+
+/* 2Fのリンク（画像）エリア */
+.f2 a {
+    width: 55%;              /* f1のaタグと同じ幅 */
+    display: flex;
+    justify-content: center;
+}
+
+/* 2Fの画像 */
+.f2 img {
+    width: 100%;             
+    max-width: 800px;        
+    height: auto;
+    margin: 0;    
+    transition: transform 0.3s ease;
+}
+
+/* 2Fの文字(h2) */
+.f2 h2 {
+    font-size: 80px;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    margin: 0;
+    display: flex;           /* 中央寄せのためにflexを追加 */
+    justify-content: center; 
+    align-items: center;     
+    white-space: nowrap;
+    width: 40%;              /* f1のh2と同じ幅 */
+    flex-shrink: 0;        
+}
+
+
+/* ボタンの設定 */
+.floor-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;               /* ボタン同士の隙間を少し詰めました */
+    margin: 40px 0;
+    flex-wrap: wrap;         /* スマホで見た時に自動で折り返すように設定 */
+}
+
+.floor-btn {
+    display: inline-block;
+    width: 100px;            /* 3つのボタンが並びやすいよう幅を少し小さく(120→100) */
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: #1a1a2e;
+    border: 2px solid #4a90e2;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* ホバーした時だけ光る設定 */
+.floor-btn:hover {
+    background: #4a90e2;
+    color: #fff;
+    box-shadow: 0 0 15px #4a90e2;
+    transform: translateY(-3px);
+}
+
+.main-site-menu {
+    padding-top: 40px; 
+}
+.site-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px; 
+    /* 下に下げる（例：50px） */
+    margin-top: 80px; 
+
+    /* 右にずらす（例：100px） */
+    margin-left: 150px; 
+}
+
+.site-menu a:hover {
+    color: #fdfa38;
+}
+
+/* ロケットの設定 */
+.to-top-btn {
+    /* 配置設定 */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;    
+    /* ボタンのデザイン（背景や枠を消す） */
+    display: flex;
+    justify-content: center;
+    width: 80px;  /* ロケットの大きさを調整 */
+    height: auto;
+    
+    /* 表示・非表示の切り替え設定 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ロケット画像そのものの設定 */
+.rocket-img {
+    width: 40px;
+    height: auto;
+    /* 背景がない分、影（ドロップシャドウ）をつけると見やすくなります */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* スクロール時に表示 */
+.to-top-btn.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ホバーした時：ロケットを少し大きく、光らせる */
+.to-top-btn:hover .rocket-img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+}
+
+/* mainは終わり */
+
+/* footerの設定 */
+.footer_LINK {
+    display: flex;
+    column-gap: 80px;        
+    flex-wrap: wrap;  
+    padding:20px 120px 40px;
+}
+
+.footer {
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px; 
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.footer-text {
+    font-size: 17px;
+    margin-top: 10px;       /* ロゴの文字の高さに微調整 */
+    line-height: 1.8;       /* 行間を広げると読みやすい */
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ロケット発射のアニメーション */
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        /* 少しだけ下に沈み込んでから... */
+        transform: translateY(10px);
+    }
+    100% {
+        /* 一気に画面の上に突き抜ける！ */
+        transform: translateY(-100vh);
+    }
+}
+
+/* JSでこのクラスがついた瞬間に発射 */
+.to-top-btn.launching {
+    animation: rocket-launch 0.8s forwards ease-in;
+    pointer-events: none; /* 連打防止 */
+}
+
+
+@media (max-width: 800px) {
+    .f1, .f2 {
+        flex-direction: column; /* 縦並びに変更 */
+        text-align: center;
+    }
+    
+    /* 1Fは画像が先、2Fは文字が先になっているHTML順序を考慮 */
+    .f1 img, .f2 img {
+        width: 80%; /* スマホでは画像を大きく表示 */
+    }
+
+    .f1 h2, .f2 h2 {
+        font-size: 40px; /* スマホでは文字を少し小さく */
+        margin-top: 10px;
+    }
+}

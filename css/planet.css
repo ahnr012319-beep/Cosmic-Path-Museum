@@ -1,0 +1,493 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../image/bac6.jpg); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+}
+
+.header {
+    position: relative; /* 子要素の基準にする */
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    -webkit-mask-image: linear-gradient(to bottom, black 105%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 120%, transparent 100%);
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+.header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 2s ease-in-out; 
+    
+}
+
+/* ロゴやメニューが入っているコンテナ */
+.header-inner {
+    position: relative; 
+    z-index: 10;
+    height: 100px; /* ロゴなどの高さは維持 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10; 
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.header-title {
+    position: absolute;
+    top: 20rem; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.header-title h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.header-title p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    letter-spacing: 0.3em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.header-title p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* 非表示ボタン */
+.menu-trigger{
+    display: none;
+}
+
+.header-logo img {
+    width: 200px;
+    margin-top: 35px;
+}
+
+/* メニュー設定 */
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-menu ul li {
+    margin: 0 7px;
+    position: relative; 
+}
+
+/* リンク自体の色指定 */
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* ホバーで色を変える */
+.header-menu ul :hover > a {
+    color: #fdfa38;
+}
+
+/* 子メニューの箱：最初は隠す */
+.header-menu .sub-menu {
+    display: none;       
+    position: absolute;  
+    top: 100%;         
+    left: 0;
+    border: none;
+    padding: 10px 0;
+    min-width: 130px;
+    z-index: 100;
+    flex-direction: column; /* ★横並びにならないように縦に並べる */
+    border-radius: 10px;      /* 角を丸くする */
+    padding: 1px 0;         /* 中の上下余白を広くする */}
+
+    .header-menu li:hover > .sub-menu {
+    display: flex; /* flex-direction: columnで縦に並ぶように出す */
+}
+
+.sub-menu li {
+    margin: 0; 
+    width: 100%;
+}
+
+.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+/* main設定 */
+
+/* プラネタリウムの説明 */
+.pl {
+    /* ストアやイベントと同じ紺色の半透明背景に変更 */
+    background-color: rgba(20, 20, 35, 0.8); 
+    
+    /* 背後をぼかすエフェクト（これを入れると質感が統一されます） */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    padding-top: 40px;
+    padding-bottom: 40px; /* 下方向の余白も足すとバランスが良くなります */
+    
+    /* 境界線を少し滑らかに */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px; /* 角を丸くする場合 */
+    
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+}
+
+.pl h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 0;
+}
+/* 親要素：ここで横並びを指示 */
+.pl-text {
+    display: flex;         
+    align-items: center;   
+    gap: 40px;             
+    max-width: 1100px;     
+    margin: 40px auto ;    
+
+}
+
+/* 画像：角を丸くせず、横長に大きく表示 */
+.pl-image-box {
+    flex: 1.5;
+    margin-bottom: 80px;            
+}
+
+.pl-image-box img {
+    width: 100%;          
+    height: 350px;         
+    object-fit: cover;     
+    border-radius: 0;      
+}
+
+.pl-content-box {
+    flex: 1;              
+    color: #fff;
+    margin-bottom: 70px;
+    text-align: center; 
+}
+
+.pl-content-box h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;      /* 線と文字の間の隙間 */
+    border-bottom: 2px dashed #fff; /* 白い点線を入れる */
+    display: block;            /* 幅いっぱいに線を引く */
+
+}
+
+.pl-content-box p {
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    width: 120px;
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: #1a1a2e;
+    border: 2px solid #4a90e2;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-top: 25px; 
+}
+
+/* ホバー設定はそのまま */
+.btn:hover {
+    background: #4a90e2;
+    color: #fff;
+    box-shadow: 0 0 15px #4a90e2;
+    transform: translateY(-3px);
+}
+
+
+/* テーブルを中央に配置し、ボタンとの間隔を開ける */
+.pl-schedule {
+    width: 100%;
+    max-width: 320px;    /* 幅を固定して見やすく */
+    margin: 40px auto ;   
+    color: #fff;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.pl-schedule {
+    width: 100%;
+    max-width: 450px;    /* 320pxから450pxに広げて存在感をアップ */
+    margin: 50px auto;   /* 上下の余白も少し増やしてゆったり配置 */
+    color: #fff;
+    border-collapse: collapse;
+    font-size: 1.2rem;   /* 文字サイズを大きく（0.95remから1.2remへ） */
+}
+
+.pl-schedule th, 
+.pl-schedule td {
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pl-schedule th {
+    text-align: left;
+    color: #4a90e2;      /* ボタンと合わせた青色 */
+}
+
+.pl-schedule td {
+    text-align: right;
+    letter-spacing: 0.05em;
+}
+
+/* 最後の線は消す */
+.pl-schedule tr:last-child th,
+.pl-schedule tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* スケジュール全体を囲むボックス */
+.pl-schedule-box {
+    padding-top: 60px;    
+    padding-bottom: 100px; 
+    text-align: center;
+    width: 100%; 
+    clear: both; 
+}
+
+/* スケジュール用の見出しh2 */
+.pl-schedule-box h2 {
+    font-size: 2rem;     
+    color: #fff;
+    margin-bottom: 30px;  /* テーブルとの間の隙間 */
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4a90e2; /* ボタンの色と合わせた下線 */
+}
+
+/* テーブル自体の設定（以前のものを継続） */
+.pl-schedule {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;       /* 左右中央寄せ */
+    color: #fff;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+}
+
+.floor-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;               /* ボタン同士の隙間を少し詰めました */
+    margin: 40px 0;
+    flex-wrap: wrap;         /* スマホで見た時に自動で折り返すように設定 */
+}
+
+.floor-btn {
+    display: inline-block;
+    width: 100px;            /* 3つのボタンが並びやすいよう幅を少し小さく(120→100) */
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: #1a1a2e;
+    border: 2px solid #4a90e2;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* ホバーした時だけ光る設定 */
+.floor-btn:hover {
+    background: #4a90e2;
+    color: #fff;
+    box-shadow: 0 0 15px #4a90e2;
+    transform: translateY(-3px);
+}
+
+
+
+/* サイトメニュー設定 */
+.main-site-menu {
+    padding-top: 40px; 
+}
+.site-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px; 
+    margin-top: 80px; 
+    margin-left: 150px; 
+}
+
+.site-menu a:hover {
+    color: #fdfa38;
+}
+
+/* ロケットの設定 */
+.to-top-btn {
+    /* 配置設定 */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;    
+    /* ボタンのデザイン（背景や枠を消す） */
+    display: flex;
+    justify-content: center;
+    width: 80px;  /* ロケットの大きさを調整 */
+    height: auto;
+    
+    /* 表示・非表示の切り替え設定 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ロケット画像そのものの設定 */
+.rocket-img {
+    width: 40px;
+    height: auto;
+    /* 背景がない分、影（ドロップシャドウ）をつけると見やすくなります */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* スクロール時に表示 */
+.to-top-btn.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ホバーした時：ロケットを少し大きく、光らせる */
+.to-top-btn:hover .rocket-img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+}
+
+/* mainは終わり */
+
+/* footerの設定 */
+.footer_LINK {
+    display: flex;
+    column-gap: 80px;        
+    flex-wrap: wrap;  
+    padding:20px 120px 40px;
+}
+
+.footer {
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px; 
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.footer-text {
+    font-size: 17px;
+    margin-top: 10px;       /* ロゴの文字の高さに微調整 */
+    line-height: 1.8;       /* 行間を広げると読みやすい */
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ロケット発射のアニメーション */
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        /* 少しだけ下に沈み込んでから... */
+        transform: translateY(10px);
+    }
+    100% {
+        /* 一気に画面の上に突き抜ける！ */
+        transform: translateY(-100vh);
+    }
+}
+
+/* JSでこのクラスがついた瞬間に発射 */
+.to-top-btn.launching {
+    animation: rocket-launch 0.8s forwards ease-in;
+    pointer-events: none; /* 連打防止 */
+}

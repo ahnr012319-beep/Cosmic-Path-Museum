@@ -1,0 +1,267 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../image/bac6.jpg); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.menu-trigger{
+        display: none;
+    }
+    
+.header-logo img {
+    width: 200px;
+    margin-top: 35px;
+}
+
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-menu ul li {
+    margin: 0 7px;
+    position: relative; 
+}
+
+/* リンク自体の色指定 */
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* ホバーで色を変える */
+.header-menu ul :hover > a {
+    color: #fdfa38;
+}
+.header-menu .sub-menu {
+    display: none;       
+    position: absolute;  
+    top: 100%;          
+    left: 0;
+    border: none;
+    padding: 10px 0;
+    min-width: 130px;
+    z-index: 100;
+    flex-direction: column; 
+    border-radius: 10px;      
+    padding: 1px 0;  
+}       
+
+.header-menu li:hover > .sub-menu {
+    display: flex; /* flex-direction: columnで縦に並ぶように出す */
+}
+
+.sub-menu li {
+    margin: 0; 
+    width: 100%;
+}
+
+.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+/* main設定 */
+.floor-text {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-size: 30px;
+    color: #fff;
+    margin: 80px 160px 80px;
+}
+.f2 {
+    display: flex; 
+    text-align: center;           
+    justify-content: center;   
+    margin-bottom: 100px;      
+}
+
+.f2 img {
+    width: 55rem;
+    height: auto;             
+    display: block;           
+}
+/* ボタンの設定 */
+.floor-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;               /* ボタン同士の隙間を少し詰めました */
+    margin: 40px 0;
+    flex-wrap: wrap;         /* スマホで見た時に自動で折り返すように設定 */
+}
+
+.floor-btn {
+    display: inline-block;
+    width: 100px;            /* 3つのボタンが並びやすいよう幅を少し小さく(120→100) */
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: #1a1a2e;
+    border: 2px solid #4a90e2;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* ホバーした時だけ光る設定 */
+.floor-btn:hover {
+    background: #4a90e2;
+    color: #fff;
+    box-shadow: 0 0 15px #4a90e2;
+    transform: translateY(-3px);
+}
+/* サイトメニュー設定 */
+.main-site-menu {
+    padding-top: 40px; 
+}
+.site-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px; 
+    /* 下に下げる（例：50px） */
+    margin-top: 80px; 
+
+    /* 右にずらす（例：100px） */
+    margin-left: 150px; 
+}
+
+.site-menu a:hover {
+    color: #fdfa38;
+}
+
+
+/* ロケットの設定 */
+.to-top-btn {
+    /* 配置設定 */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;    
+    /* ボタンのデザイン（背景や枠を消す） */
+    display: flex;
+    justify-content: center;
+    width: 80px;  /* ロケットの大きさを調整 */
+    height: auto;
+    
+    /* 表示・非表示の切り替え設定 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ロケット画像そのものの設定 */
+.rocket-img {
+    width: 40px;
+    height: auto;
+    /* 背景がない分、影（ドロップシャドウ）をつけると見やすくなります */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* スクロール時に表示 */
+.to-top-btn.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ホバーした時：ロケットを少し大きく、光らせる */
+.to-top-btn:hover .rocket-img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+}
+/* mainは終わり */
+
+/* footerの設定 */
+.footer_LINK {
+    display: flex;
+    column-gap: 80px;        
+    flex-wrap: wrap;  
+    padding:20px 120px 40px;
+}
+
+.footer {
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px; 
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.footer-text {
+    font-size: 17px;
+    margin-top: 10px;       /* ロゴの文字の高さに微調整 */
+    line-height: 1.8;       /* 行間を広げると読みやすい */
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ロケット発射のアニメーション */
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        /* 少しだけ下に沈み込んでから... */
+        transform: translateY(10px);
+    }
+    100% {
+        /* 一気に画面の上に突き抜ける！ */
+        transform: translateY(-100vh);
+    }
+}
+
+/* JSでこのクラスがついた瞬間に発射 */
+.to-top-btn.launching {
+    animation: rocket-launch 0.8s forwards ease-in;
+    pointer-events: none; /* 連打防止 */
+}

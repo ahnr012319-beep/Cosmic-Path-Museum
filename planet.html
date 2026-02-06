@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プラネタリウム</title>
+    <script src="./js/toggl.js"></script>
+    <link rel="stylesheet" href="./css/planet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="video-bg">
+            <video id="pageVideo" class="header-video" src="./video/pl.mp4" autoplay muted loop playsinline style="opacity: 1;"></video>
+        </div>
+        
+        <div class="header-inner">
+            <a class="header-logo" href="./index.html">
+                <img src="./image/footertag.png" alt="logo">
+            </a>
+            <div class="header-title">
+                <h1>PLANETARIUM</h1>
+                <p>プラネタリウム</p>
+            </div>
+    
+            <button class="menu-trigger" id="menu-btn">
+                <img src="./image/Group1.png" alt="メニュー" class="icon-open">
+                <img src="./image/Group2.png" alt="閉じる" class="icon-close">
+            </button>
+    
+            <div class="header-site-menu">
+                <nav class="header-menu">
+                    <ul>
+                        <li>
+                            <a>ご利用案内</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">TOP</a></li>
+                                <li><a href="schedule.html">営業時間</a></li>
+                                <li><a href="ticket.html">チケット購入</a></li>
+                                <li><a href="shop.html">ストア</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a>フロア</a>
+                            <ul class="sub-menu">
+                                <li><a href="area.html">全体</a></li>
+                                <li><a href="floor1.html">1F</a></li>
+                                <li><a href="floor2.html">2F</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a>イベント</a>
+                            <ul class="sub-menu">
+                                <li><a href="Event.html">一覧</a></li>
+                                <li><a href="planet.html">PLANETARIUM</a></li>
+                                <li><a href="touch.html">ふれる・感じる</a></li>
+                                <li><a href="travel.html">宇宙の旅</a></li>
+                                <li><a href="phot.html">写真展</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="./Access.html">アクセス</a></li> 
+                        <li><a href="./Q&A.html">お問合せ</a></li>            
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pl">
+            <div>
+                <h2>プラネタリウム</h2>
+            </div>
+            
+            <div class="pl-text">
+                <div class="pl-image-box">
+                    <img src="./image/praneta.png" alt="座席">
+                </div>
+            
+                
+                <div class="pl-content-box">
+                    <h2>プラネタリウム</h2>
+                    <p>
+                        満天の星々が広がるドーム空間で、日常を忘れるひとときを。
+                        最新の投影機が映し出すリアルな星空と、迫力ある映像をお楽しみいただけます。
+                    </p>
+                    
+                    <a href="ticket.html" class="btn">チェット購入</a>
+                </div>
+            </div>
+
+            <div class="pl-schedule-box">
+                <h2>上映スケジュール</h2>
+                <table class="pl-schedule">
+                    <tr>
+                        <th>1回目</th>
+                        <td>10:30 〜 11:15</td>
+                    </tr>
+                    <tr>
+                        <th>2回目</th>
+                        <td>13:00 〜 13:45</td>
+                    </tr>
+                    <tr>
+                        <th>3回目</th>
+                        <td>15:30 〜 16:15</td>
+                    </tr>
+                    <tr>
+                        <th>4回目</th>
+                        <td>17:00 〜 17:45</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="floor-selector">
+                <a href="Event.html" rel="noopener" class="floor-btn">ALL</a>
+            </div>
+    
+        </div>  
+
+
+        
+        <div class="main-site-menu">
+            <nav class="site-menu">
+                <ul><li><a href="./index.html"target=>ご利用案内</a></li>
+                    <li><a href="./Area.html"target=>フロア</a></li>
+                    <li><a href="./Event.html"target=>イベント</a></li>
+                    <li><a href="./Access.html"target=>アクセス</a></li> 
+                    <li><a href="./Q&A.html"target=>お問合せ</a></li>            
+                </ul>
+            </nav>
+        </div>
+    
+        <a href="#" id="pagetop" class="to-top-btn">
+            <img src="./image/rocket (2).png" alt="TOPに戻る" class="rocket-img">
+        </a>
+
+    </main>
+    
+    <!-- footerの設定 -->
+    <footer>
+        <div class="footer_LINK">
+            <ul class="footer">
+                <li>
+                    <a href="index.html">
+                        <img src="./image/footertag.png" alt="tag">
+                    </a>
+                </li>
+            </ul>
+            
+            <div>
+                <div class="footer-text">
+                    <p>〒554-0044</p>
+                    <p>大阪府大阪市此花区夢洲中1丁目</p>
+                    <p>TEL 0120-1027-0123</p>
+                </div>
+                
+                <ul class="linkr_foote">
+                    <li class="link">
+                        <a href="#">プライバシーポリシー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </a>
+                    </li>
+                    <li class="link">
+                        <a href="#">特定商取引法の基づく表記&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="copyright"><small>&copy;Cosmic Path Museum</small></p>
+        </div>
+    </footer>
+    
+</body>
+</html>

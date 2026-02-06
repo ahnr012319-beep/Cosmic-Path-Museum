@@ -1,0 +1,631 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: #000; */
+    background-image: url(../image/bac6.jpg); 
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center;
+    color: white;
+}
+
+.header {
+    height: 100vh; /* 40remから100vhに変更してスライダーと合わせる */
+    position: relative;
+    overflow: hidden; /* はみ出し防止 */
+}
+
+
+.slider-item{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    object-fit: cover; /* 画面いっぱいに綺麗に敷き詰める */
+}
+.slider-item1{
+    background-image: url(../image/top3cp.jpg);
+}
+.slider-item2{
+    background-image: url(../image/top5.jpg);
+
+}
+
+/* 動画と画像に共通のスタイル */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+
+}
+.header-inner {
+    height:100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+
+/* 前面の文字やロゴを確実に手前に出す */
+.header-logo,.header-menu,.header-text {
+    position: relative;
+    z-index: 10;
+}
+
+.menu-trigger {
+    display: none;
+}
+
+.header-logo img {
+    width: 200px;
+    margin-top: 35px;
+}
+
+.header-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+.header-menu ul li {
+    margin: 0 7px;
+    position: relative; 
+}
+
+/* リンク自体の色指定 */
+.header-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* ホバーで色を変える */
+.header-menu ul li:hover > a {
+    color: #fdfa38;
+}
+
+/* 子メニューの箱：最初は隠す */
+.header-menu .sub-menu {
+    display: none;       /* 最初は非表示 */
+    position: absolute;  /* 浮かせた状態にする */
+    top: 100%;           /* 親メニューのすぐ下 */
+    left: 0;
+    border: none;
+    padding: 10px 0;
+    min-width: 130px;
+    z-index: 100;
+    flex-direction: column; /* ★横並びにならないように縦に並べる */
+    border-radius: 10px;      /* 角を丸くする */
+    padding: 1px 0;         /* 中の上下余白を広くする */}
+
+/* 親にマウスを乗せたら子メニューを出す */
+.header-menu li:hover > .sub-menu {
+    display: flex; /* flex-direction: columnで縦に並ぶように出す */
+}
+
+/* 子メニュー内のリスト設定 */
+.sub-menu li {
+    margin: 0; 
+    width: 100%;
+}
+
+.sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+/* ハンバーガーメニュー */
+/* 最初は「閉じる」アイコンを隠しておく */
+.icon-close {
+    display: none;
+}
+
+/* ボタンに 'active' クラスがついた時の設定 */
+.menu-trigger.active .icon-open {
+    display: none;    /* 通常アイコンを消す */
+}
+.menu-trigger.active .icon-close {
+    display: block;   /* 閉じるアイコンを出す */
+}
+
+/* ボタン自体の見た目（枠を消すなど） */
+.menu-trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 50px; /* 画像のサイズに合わせる */
+}
+.menu-trigger img {
+    width: 100%;
+    height: auto;
+}
+
+/* 営業時間・チケット */
+.header-text {
+    position: absolute;
+    right: 40px;  
+    bottom: 60px;   
+    text-align: center;
+    font-size: 20px;
+    line-height: 2.5;
+}
+.header-text h3 {
+    margin: 0 7px;
+    cursor: pointer;     
+    transition: color 0.3s; 
+}
+
+.header-text h3:hover {
+    color: #fdfa38;
+}
+
+/* main設定 */
+
+.pickup h2 {
+    font-size: 40px;
+    margin-left: 11%; 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-weight: 150;           /* 数値を100〜300にすると細くなります */
+    letter-spacing: 0.1em;      /* 少し間隔をあけるとおしゃれに見えます */
+    -webkit-font-smoothing: antialiased; /* 文字の線をより繊細に見せる効果 */
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    gap: 70px; 
+    flex-wrap: wrap; 
+}
+
+.list li {
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+    width: 310px; 
+    height: auto;  
+    /* 浮遊アニメーションを追加: 3秒周期 / 滑らかに / 無限に */
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* 1つおきに動きをずらす設定（オプション） */
+.list li:nth-child(even) {
+    animation-delay: 1.5s;
+}
+
+.list li img {
+    width: 100%;
+    display: block;
+    transition-duration: 0.2s;
+}
+
+.list img {
+    transition-duration: 0.2s;
+}
+
+.list img:hover {
+    transform: scale(1.05);
+}
+
+.news {
+    width: 80%;
+    margin: 100px auto; 
+    color: #fff;
+}
+
+.news h2 {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-weight: 200;           /* 数値を100〜300にすると細くなります */
+    letter-spacing: 0.1em;      /* 少し間隔をあけるとおしゃれに見えます */
+    -webkit-font-smoothing: antialiased; /* 文字の線をより繊細に見せる効果 */
+    font-size: 30px;
+    text-align: left;
+    margin-left: 2%;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.news-text {
+    width: 100%;       
+    max-width: 800px;  
+    margin: 0 auto;     
+}
+
+.news-text dl {
+    display: flex;
+    align-items: center;
+    gap: 3rem;             
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+    transition: background-color 0.3s;
+}
+
+.news-text dt, .news-text dd {
+    margin: 0;
+    padding: 0;
+}
+
+.news-text dd {
+    margin: 0;            
+    font-size: 1rem;
+    letter-spacing: 0.08rem;
+}
+
+.news-text dl:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+/* 動画の設定 */
+
+/* 親要素：ここを基準に文字の位置を決める */
+.video-container {
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, black 98%, transparent 100%);
+    filter: drop-shadow(10px 5px 15px rgb(190, 190, 190));
+    padding: 30px 0;    
+}
+
+#myVideo{
+    width: 100%;
+    clip-path:url(#waku);
+    aspect-ratio: 1 / 0.565;
+}
+
+.video-overlay-text {
+    position: absolute;
+    top: 60%;           /* 縦中央 */
+    left: 8%;           /* 左端から8%（お好みで調整してください） */
+    transform: translateY(-50%);  
+    color: white;
+    font-size: 2.3rem;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+}
+.sozai{
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; 
+}
+
+
+
+/* サイトの設定 */
+.main-site-menu {
+    padding-top: 40px; 
+}
+.site-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 30px; 
+    /* 下に下げる（例：50px） */
+    margin-top: 80px; 
+
+    /* 右にずらす（例：100px） */
+    margin-left: 150px; 
+}
+
+.site-menu a:hover {
+    color: #fdfa38;
+}
+
+
+.to-top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 60px; /* 15pxから60pxくらいに大きくすると押しやすいです */
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* ロケット画像そのものの設定 */
+.rocket-img {
+    width: 40px;
+    height: auto;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.to-top-btn.is-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.to-top-btn:hover .rocket-img {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.8));
+}
+
+/* mainは終わり */
+
+/* footerの設定 */
+
+.footer_LINK {
+    display: flex;
+    column-gap: 80px;        
+    flex-wrap: wrap;  
+    padding:20px 120px 40px;
+}
+
+.footer {
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px; 
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.footer-text {
+    font-size: 17px;
+    margin-top: 10px;       /* ロゴの文字の高さに微調整 */
+    line-height: 1.8;       /* 行間を広げると読みやすい */
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* アニメーションの中身を定義 */
+/* @keyframes backgroundChange2枚 {
+    0%, 45% {
+        background-image: url(../image/top3cp.jpg); 
+    }
+    50%, 95% {
+        background-image: url(../image/top5.jpg); 
+    }
+    100% {
+        background-image: url(../image/top3cp.jpg);
+    }
+} */
+
+/* 浮遊アニメーションの定義 */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* 上に10px動く */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ロケット発射のアニメーション */
+@keyframes rocket-launch {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        /* 少しだけ下に沈み込んでから... */
+        transform: translateY(10px);
+    }
+    100% {
+        /* 一気に画面の上に突き抜ける！ */
+        transform: translateY(-100vh);
+    }
+}
+
+/* JSでこのクラスがついた瞬間に発射 */
+.to-top-btn.launching {
+    animation: rocket-launch 0.8s forwards ease-in;
+    pointer-events: none; /* 連打防止 */
+}
+
+/* --- [重要] 全体設定（基本は隠す） --- */
+.menu-trigger {
+    display: none; /* デフォルト（PC）では非表示 */
+}
+
+/* --- [重要] スマホ版の設定（800px以下の時だけ出す） --- */
+@media screen and (max-width: 800px) {
+    .menu-trigger {
+        display: block !important; /* スマホでは強制的に表示 */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 2000;
+        background: none;
+        border: none;
+    }
+}
+/* --- 3. スマホ（画面が狭い時）のボタン配置 --- */
+@media screen and (max-width: 800px) {
+    body {
+        /* 1. 背景の固定を解除（スマホのバグ防止） */
+        background-attachment: scroll; 
+        
+        /* 2. 画像の配置をスマホ向けに最適化 */
+        background-position: center center;
+        
+        /* 3. 画像のサイズを画面に合わせる */
+        background-size: cover;
+        
+        /* 4. [オプション] 背景が明るくて文字が見にくい場合、少し暗くする */
+        background-color: #000; 
+    }
+
+    /* 1. ヘッダー周りの調整 */
+    .header {
+        height: 300px; /* PC版(640px)は高すぎるので短く */
+    }
+    
+    .header-logo img {
+        width: 150px; /* ロゴを少し小さく */
+        margin-top: 15px;
+    }
+
+    .menu-trigger {
+        display: block !important; /* スマホではボタンを出す */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001;
+        width: 50px; /* アイコンの大きさに合わせて調整 */
+    }
+
+    .header-site-menu {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* 高さを固定せず、最低でも画面1杯分にする */
+        height: 100%;
+        min-height: 100vh; 
+        background: rgba(10, 15, 30, 0.98); /* 少し濃くして文字を見やすく */
+        z-index: 1000;
+        
+        /* 重要：上下にしっかり余白を作り、スクロールを可能にする */
+        padding: 80px 0 60px; 
+        overflow-y: auto;     /* 中身が長い時にスクロールさせる */
+        -webkit-overflow-scrolling: touch; /* スマホで滑らかに動かす */
+    }
+
+    .header-site-menu.is-active {
+        display: flex !important; /* blockからflexに変更して中央に並べる */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* メニュー内のリスト（ul）の重なりを防ぐ */
+    .header-menu ul {
+        display: flex !important; /* 強制的に表示 */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* 項目間の隙間を少し狭くして収まりを良くする */
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-menu ul li a {
+        font-size: 20px; /* スマホで押しやすいサイズ */
+        font-weight: bold;
+        letter-spacing: 0.1em;
+    }
+
+    /* 3. 子メニュー（ドロップダウン）をスマホでは最初から見せる */
+    .header-menu .sub-menu {
+        display: block; /* ホバーではなく常時表示 */
+        position: static; /* 浮かさずに縦に並べる */
+        background: none;
+        text-align: center;
+        padding: 10px 0;
+        min-width: auto;
+    }
+
+    /* 右下の「営業時間」などはスマホでは非表示にしてスッキリさせる */
+    .header-text {
+        display: none;
+    }
+
+    /* 2. Pickupセクション（横並びを縦並びに！） */
+    .pickup h2 {
+        font-size: 32px;
+        margin: 60px 0 40px 10%; /* 上下の余白を詰める */
+    }
+
+    /* Pickupセクション */
+    .list {
+        flex-direction: column; 
+        align-items: center;
+        gap: 50px; 
+    }
+
+    .list li {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    /* Newsセクション */
+    .news {
+        width: 90%;
+        margin: 60px auto;
+    }
+
+    .news-text dl {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    /* 4. フッターメニュー（ここも縦並びに！） */
+    .site-menu ul {
+        justify-content: center;
+        align-items: center;
+        margin-left: 5px; /* PC版の左マージンを解除 */
+        margin-top: 40px;
+        gap: 15px;
+    }
+
+    .footer_LINK {
+        padding: 20px 40px;
+        justify-content: center;
+        flex-direction: column; /* 全体を縦に */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer {
+        margin-top: 20px;
+        width: 150px;
+    }
+
+    /* 5. ロケットボタンのサイズ調整 */
+    .to-top-btn {
+        right: 20px;
+        bottom: 20px;
+        width: 15px;
+    }
+}
+
